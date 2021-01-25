@@ -86,10 +86,13 @@ HEADER
       <li class="my-2">
         <button class="btn d-inline-flex align-items-center collapsed" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#contents-collapse" aria-controls="contents-collapse">Git</button>
         <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
-          <li><a class="d-inline-flex align-items-center rounded" href="#typography">Typography</a></li>
-          <li><a class="d-inline-flex align-items-center rounded" href="#images">Images</a></li>
-          <li><a class="d-inline-flex align-items-center rounded" href="#tables">Tables</a></li>
-          <li><a class="d-inline-flex align-items-center rounded" href="#figures">Figures</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#install">Install and config</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#basics">Git Basics</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#revert">Reverting changes</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#branch">Branching and merging</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#advance">Advance commands</a></li>
+          <li><a class="d-inline-flex align-items-center rounded" href="#cheatsheet">Cheat Sheet</a></li>
+          
         </ul>
       </li>
       <li class="my-2">
@@ -136,280 +139,218 @@ HEADER
   <section id="content">
     <h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Git</h2>
 
-    <article class="my-3" id="typography">
+    <!-- # Install and config -->
+    <article class="my-3" id="install">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Git</h3>
+        <h3>Install and config</h3>
         <!-- <a class="d-flex align-items-center" href="../content/typography/">Documentation</a> -->
       </div>
 
       <div>
         <div class="bd-example">
-          <h1>Work in progress...</h1>
-        <p class="display-1">Display 1</p>
-        <p class="display-2">Display 2</p>
-        <p class="display-3 ">Display 3</p>
-        <p class="display-4">Display 4</p>
-        <p class="display-5">Display 5</p>
-        <p class="display-6">Display 6</p>
-        </div>
-
-        <div class="bd-example">
-        <p class="h1">Heading 1</p>
-        <p class="h2">Heading 2</p>
+        <p class="h2">Install and config</p>
+        <p><strong>Git</strong> is a free version control software designed to manage and track the changes to your code. </p>
+        <p>Open terminal or command line and type: <code class="markdown">$ git --version</code> to check if you have it in your local environment. If you don't have it - install <a href="https://brew.sh/">Homebrew</a> first and then run: <code class="markdown">$ brew install git</code></p>
+        <p>Install on Linux:</p>
+        <p>Install on Windows</p>
+        <p class="h5">Configuration commands</p>
+        <p>The first thing you should after installing Git is to define your user name and email address:</p>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Command</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><code class="markdown">$ git config --global user.name "john.smith"</code></td>
+              <td>Define your user name.</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><code class="markdown">$ git config --global user.email "john.smith@example.com"</code></td>
+              <td>Define your email address.</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><code class="markdown">$ git config --system core.editor vim</code></td>
+              <td>Set your default editor, in this case vim.</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td><code class="markdown">$ git config --list</code></td>
+              <td>Check the current settings.</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <!-- <p class="h2">Heading 2</p>
         <p class="h3">Heading 3</p>
         <p class="h4">Heading 4</p>
         <p class="h5">Heading 5</p>
-        <p class="h6">Heading 6</p>
-        </div>
-
-        <div class="bd-example">
-        <p class="lead">
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.
-        </p>
-        </div>
-
-        <div class="bd-example">
-        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
-        <p><del>This line of text is meant to be treated as deleted text.</del></p>
-        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
-        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
-        <p><u>This line of text will render as underlined.</u></p>
-        <p><small>This line of text is meant to be treated as fine print.</small></p>
-        <p><strong>This line rendered as bold text.</strong></p>
-        <p><em>This line rendered as italicized text.</em></p>
-        </div>
-
-        <div class="bd-example">
-        <blockquote class="blockquote">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-          <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
-        </div>
-
-        <div class="bd-example">
-        <ul class="list-unstyled">
-          <li>Lorem ipsum dolor sit amet</li>
-          <li>Consectetur adipiscing elit</li>
-          <li>Integer molestie lorem at massa</li>
-          <li>Facilisis in pretium nisl aliquet</li>
-          <li>Nulla volutpat aliquam velit
-            <ul>
-              <li>Phasellus iaculis neque</li>
-              <li>Purus sodales ultricies</li>
-              <li>Vestibulum laoreet porttitor sem</li>
-              <li>Ac tristique libero volutpat at</li>
-            </ul>
-          </li>
-          <li>Faucibus porta lacus fringilla vel</li>
-          <li>Aenean sit amet erat nunc</li>
-          <li>Eget porttitor lorem</li>
-        </ul>
-        </div>
-
-        <div class="bd-example">
-        <ul class="list-inline">
-          <li class="list-inline-item">Lorem ipsum</li>
-          <li class="list-inline-item">Phasellus iaculis</li>
-          <li class="list-inline-item">Nulla volutpat</li>
-        </ul>
+        <p class="h6">Heading 6</p> -->
+        
         </div>
       </div>
     </article>
-    <article class="my-3" id="images">
+
+    <!-- # Git Basics section -->
+    <article class="my-3" id="basics">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Images</h3>
-        <a class="d-flex align-items-center" href="../content/images/">Documentation</a>
+        <h3>Git Basics</h3>
       </div>
 
       <div>
         <div class="bd-example">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg img-fluid" width="100%" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Responsive image" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Responsive image</text></svg>
-
-        </div>
-
-        <div class="bd-example">
-        <svg class="bd-placeholder-img img-thumbnail" width="200" height="200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200" preserveAspectRatio="xMidYMid slice" focusable="false"><title>A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">200x200</text></svg>
-
+        <p class="h2">Git Basics</p>
+        <!-- <script src="https://gist.github.com/devluke88/fca6c033490fa16157c27d892cb4dcb5.js"></script>
+        <script src="https://gist.github.com/xriley/fce6cf71edfd2dadc7919eb9c98f3f17.js"></script> -->
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Command</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><code class="markdown">git init [repo-directory]</code></td>
+              <td>Initializes a new local repository in the specified directory.</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><code class="markdown">$ git add [filename]</code></td>
+              <td>Move untracked files to the staging area.</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><code class="markdown">$ git add .</code></td>
+              <td>Move all untracked files to the staging area.</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td><code class="markdown">$ git status</code></td>
+              <td>Shows status of the current repository.</td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td><code class="markdown">$ git commit</code></td>
+              <td>Open commit in nano editor where you can enter a commit message.</td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td><code class="markdown">$ git commit -m "Commit message"</code></td>
+              <td>Commit and add a commit message.</td>
+            </tr>
+          </tbody>
+        </table>
         </div>
       </div>
+
     </article>
-    <article class="my-3" id="tables">
+
+    <!-- # Reverting changes section -->
+    <article class="my-3" id="revert">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Tables</h3>
-        <a class="d-flex align-items-center" href="../content/tables/">Documentation</a>
+        <h3>Reverting changes</h3>
+      </div>
+
+      <!-- <div>
+        <div class="bd-example">
+        <p class="h2">Reverting changes</p>
+        <p>Git is a free version control software designed to manage and track the changes to your code. </p>
+        <p>Check if you have Git on your laptop. Open terminal or command line and type: <code class="markdown">$ git --version</code> to check if you have it in your local environment. If you don't have it - install <a href="https://brew.sh/">Homebrew</a> first and then run: <code class="markdown">$ brew install git</code></p>
+        
+        <script src="https://gist.github.com/xriley/fce6cf71edfd2dadc7919eb9c98f3f17.js"></script>
+        </div> -->
+      </div>
+
+    </article>
+
+    <!-- # Branching and merging section -->
+    <article class="my-3" id="branch">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3>Branching and merging</h3>
       </div>
 
       <div>
         <div class="bd-example">
-        <table class="table table-striped">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          </tbody>
-        </table>
-        </div>
-
-        <div class="bd-example">
-        <table class="table table-dark table-borderless">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          </tbody>
-        </table>
-        </div>
-
-        <div class="bd-example">
-        <table class="table table-hover">
-          <thead>
-          <tr>
-            <th scope="col">Class</th>
-            <th scope="col">Heading</th>
-            <th scope="col">Heading</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <th scope="row">Default</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          
-          <tr class="table-primary">
-            <th scope="row">Primary</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-secondary">
-            <th scope="row">Secondary</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-success">
-            <th scope="row">Success</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-danger">
-            <th scope="row">Danger</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-warning">
-            <th scope="row">Warning</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-info">
-            <th scope="row">Info</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-light">
-            <th scope="row">Light</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          <tr class="table-dark">
-            <th scope="row">Dark</th>
-            <td>Cell</td>
-            <td>Cell</td>
-          </tr>
-          </tbody>
-        </table>
-        </div>
-
-        <div class="bd-example">
-        <table class="table table-sm table-bordered">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
-          </tbody>
-        </table>
+        <p class="h2">Branching and merging</p>
+        <p>Git is a free version control software designed to manage and track the changes to your code. </p>
+        <p>Check if you have Git on your laptop. Open terminal or command line and type: <code class="markdown">$ git --version</code> to check if you have it in your local environment. If you don't have it - install <a href="https://brew.sh/">Homebrew</a> first and then run: <code class="markdown">$ brew install git</code></p>
+        
+        <script src="https://gist.github.com/xriley/fce6cf71edfd2dadc7919eb9c98f3f17.js"></script>
         </div>
       </div>
     </article>
-    <article class="my-3" id="figures">
+
+    <!-- # Advance commands section -->
+    <article class="my-3" id="advance">
       <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
-        <h3>Figures</h3>
-        <a class="d-flex align-items-center" href="../content/figures/">Documentation</a>
+        <h3>Advance commands</h3>
+      </div>
+
+      <!-- <div>
+        <div class="bd-example">
+        <p class="h2">Advance commands</p>
+        <p>Git is a free version control software designed to manage and track the changes to your code. </p>
+        <p>Check if you have Git on your laptop. Open terminal or command line and type: <code class="markdown">$ git --version</code> to check if you have it in your local environment. If you don't have it - install <a href="https://brew.sh/">Homebrew</a> first and then run: <code class="markdown">$ brew install git</code></p>
+        
+        <script src="https://gist.github.com/xriley/fce6cf71edfd2dadc7919eb9c98f3f17.js"></script>
+        </div>
+      </div> -->
+    </article>
+
+    <!-- # Cheat Sheet -->
+    <article class="my-3" id="cheatsheet">
+      <div class="bd-heading sticky-xl-top align-self-start mt-5 mb-3 mt-xl-0 mb-xl-2">
+        <h3>Cheat Sheet</h3>
       </div>
 
       <div>
         <div class="bd-example">
-        <figure class="figure">
-          <svg class="bd-placeholder-img figure-img img-fluid rounded" width="400" height="300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 400x300" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">400x300</text></svg>
-
-          <figcaption class="figure-caption">A caption for the above image.</figcaption>
-        </figure>
+        <p class="h2">Cheat Sheet</p>
+        <p>Git is a free version control software designed to manage and track the changes to your code. </p>
+        <p>Check if you have Git on your laptop. Open terminal or command line and type: <code class="markdown">$ git --version</code> to check if you have it in your local environment. If you don't have it - install <a href="https://brew.sh/">Homebrew</a> first and then run: <code class="markdown">$ brew install git</code></p>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Command</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td><code class="markdown">$ git config --global user.name "[username]"</code></td>
+              <td>Define your user name.</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td><code class="markdown">$ git config --global user.email "[email_addr]"</code></td>
+              <td>Define your email address.</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td><code class="markdown">$ git config --system core.editor vim</code></td>
+              <td>Set your default editor, in this case vim.</td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td><code class="markdown">$ git config --list</code></td>
+              <td>Check the current settings.</td>
+            </tr>
+          </tbody>
+        </table>
+        
+       
+        
         </div>
       </div>
     </article>

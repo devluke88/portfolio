@@ -16,6 +16,15 @@ body {
   background-size: 1em;
 }
 
+.markdown {
+  padding: .2em .4em;
+  margin: 0;
+  color: #24292e;
+  background-color: rgb(244, 245, 247);
+  border-radius: 3px;
+  /* font-weight: bold; */
+}
+
 /* stylelint-disable-next-line selector-max-universal */
 .bd-heading + div > * + * {
   margin-top: 3rem;
